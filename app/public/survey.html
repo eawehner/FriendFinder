@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<head>
+    <title>(Nerdy) Friend Finder!</title>
+    
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Survey Questions</h2>
+        <hr>
+
+        <h4>Name:</h4>
+        <input type="text" id="name" class="form-control">
+
+        <h4>URL of Photo:</h4>
+        <input type="text" id="photo" class="form-control">
+
+        <hr>
+
+        <h4>Question 1</h4>
+        <p>How do you like your sci-fi?</p>
+        <select class="form-control" id="question01">
+            <option value="1">1 - "Epic space operas like Star Wars!"</option>
+            <option value="2">2</option>
+            <option value="3">3 - "I like them both equally!"</option>
+            <option value="4">4</option>
+            <option value="5">5 - "Morality plays like Star Trek!"</option>
+        </select>
+
+        <hr>
+
+        <h4>Question 2</h4>
+        <p>How do you feel about anime?</p>
+        <select class="form-control" id="question02">
+            <option value="1">1 - "I am absolutely not a fan"</option>
+            <option value="2">2</option>
+            <option value="3">3 - "Eh, I watch it sometimes."</option>
+            <option value="4">4</option>
+            <option value="5">5 - "I love it! It's the only thing I watch!"</option>
+        </select>
+
+        <hr>
+
+        <h4>Question 3</h4>
+        <p>Do you play video games?</p>
+        <select class="form-control" id="question03">
+            <option value="1">1 - "I have never touched a controller in my life."</option>
+            <option value="2">2</option>
+            <option value="3">3 - "I enjoy playing a game every now and then."</option>
+            <option value="4">4</option>
+            <option value="5">5 - "I'm sorry I don't have time for this, I have an WoW raid in fifteen minutes and then my Overwatch team needs me after that and then I got some Fortnite streaming before bed!"</option>
+        </select>
+
+        <hr>
+
+        <h4>Question 4</h4>
+        <p>Do you consider yourself an "outdoors" type?</p>
+        <select class="form-control" id="question04">
+            <option value="1">1 - "THE LIGHT ORB, IT BURNS!!"</option>
+            <option value="2">2</option>
+            <option value="3">3 - "I like to take a walk in the park sometimes."</option>
+            <option value="4">4</option>
+            <option value="5">5 - "I'm filling out this survey from Mount Everest right now!"</option>
+        </select>
+        
+        <hr>
+
+        <h4>Question 5</h4>
+        <p>Would you consider yourself to be a Gryffindor?</p>
+        <select class="form-control" id="question05">
+            <option value="1">1 - "Absolutely not! I'm a Slytheran all the way!"</option>
+            <option value="2">2</option>
+            <option value="3">3 - "I consider myself more of a Hufflepuff or Ravenclaw myself..."</option>
+            <option value="4">4</option>
+            <option value="5">5 - "1000 POINTS FRO GRYFFINDOR!!!"</option>
+        </select>
+
+        <hr>
+
+        <h4>Question 6</h4>
+        <p>Horde or Alliance?</p>
+        <select class="form-control" id="question06">
+            <option value="1">1 - "FOR THE ALLIANCE!"</option>
+            <option value="2">2</option>
+            <option value="3">3 - "I'm a neutral panda."</option>
+            <option value="4">4</option>
+            <option value="5">5 - "FOR THE HORDE!"</option>
+        </select>
+
+        <hr>
+
+        <h4>Question 7</h4>
+        <p>Sonic or Mario?</p>
+        <select class="form-control" id="question07">
+            <option value="1">1 - "Sonic! I gotta go fast!"</option>
+            <option value="2">2</option>
+            <option value="3">3 - "What about Spyro?"</option>
+            <option value="4">4</option>
+            <option value="5">5 - "Mario is the only one I'd trust with my plumbing!"</option>
+        </select>
+
+        <hr>
+
+        <h4>Question 8</h4>
+        <p>In PokemonGO, are you planning to catch them all?</p>
+        <select class="form-control" id="question08">
+            <option value="1">1 - "I don't play PokeGo. I hate exercise."</option>
+            <option value="2">2</option>
+            <option value="3">3 - "I catch what I can along my regular walks and routines."</option>
+            <option value="4">4</option>
+            <option value="5">5 - "I caught them all when there was 150 of them and I bought several plane tickets already for when new ones are released!"</option>
+        </select>
+
+        <hr>
+
+        <h4>Question 9</h4>
+        <p>Mass Effect or Dragon Age?</p>
+        <select class="form-control" id="question09">
+            <option value="1">1 - "Mass Effect!"</option>
+            <option value="2">2</option>
+            <option value="3">3 - "I love and play both!"</option>
+            <option value="4">4</option>
+            <option value="5">5 - "Dragon Age!"</option>
+        </select>
+
+        <hr>
+
+        <h4>Question 10</h4>
+        <p>Who would win: Alien vs. Predator?</p>
+        <select class="form-control" id="question10">
+            <option value="1">1 - "The Aliens are the ultimate fighting life form and definitely would win!"</option>
+            <option value="2">2</option>
+            <option value="3">3 - "I don't care who wins, so long as I'm not on the same planet they are. I like living."</option>
+            <option value="4">4</option>
+            <option value="5">5 - "The Predator is from a race of master hunters that can't be beat!"</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+    </div>
+
+    <div class="container" id="matchedFriend">
+        <h2>Your Result:</h2>
+        <h4 id="matchedName"></h4>
+        <img src="" id="matchedIMG"></img>
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+
+<!--Insert code here to send results to database, saving to Friends array-->
+<script type="text/javascript">
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+
+        var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            answers: [
+                $("#question01").val(),
+                $("#question02").val(),
+                $("#question03").val(),
+                $("#question04").val(),
+                $("#question05").val(),
+                $("#question06").val(),
+                $("#question07").val(),
+                $("#question08").val(),
+                $("#question09").val(),
+                $("#question10").val()
+            ]
+        };
+
+        $.post("/api/friends", newFriend, function(data) {
+            if (data) {
+                $("#matchedName").text(data.name);
+                $("#matchedIMG").attr("src", data.photo);
+            } else {
+                console.log("Oh no...No friends for you...");
+            }
+
+            $("#name").val("");
+            $("#photo").val("");
+        });
+    });
+</script>
+
+</body>
+
+</html>
