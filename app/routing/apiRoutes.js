@@ -1,5 +1,5 @@
 var path = require("path");
-var friends = require("../data/friends");
+var friends = require("../data/friends.js");
 
 module.exports = function(app) {
 
@@ -17,7 +17,7 @@ module.exports = function(app) {
             var differenceTotal = 0;
 
             for (var i=0; i<score1.length; i++) {
-                var difference = score1[i] - score2[i];
+                var difference = parseInt(score1[i]) - parseInt(score2[i]);
                 if (difference < 0) {
                     differenceTotal+= Math.abs(difference);
                 } else {
@@ -32,6 +32,8 @@ module.exports = function(app) {
         var matchedFriend = friends[friendID];
 
         console.log(matchedFriend);
+
+        cb(a);
 
         return matchedFriend;
     };
