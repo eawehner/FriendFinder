@@ -1,22 +1,34 @@
-var path = require("path");
+// var path = require("path");
 var friends = require("../data/friends.js");
 
 module.exports = function(app) {
 
-    // SO WHAT WE NEED TO DO IS:
-    // HAVE AN EMPTY ARRAY OF SCORE DIFFERENCES TO PUSH INTO
-    // LOOP THROUGH ALL THE SCORES OF EACH FRIENDS SCORE AND PUSH THOSE DIFFERENCES IN
-    // THEN COMPARE FOR THE ENTIRE ARRAY
+    app.get("/api/friends", function(req, res) {
+        return res.json(friends);
+    });
 
-    function friendMatch(friends, newFriend, cb) {
+    app.post("/api/friends", function(req, res) {
+        console.log(friends);
+        console.log(req.body);
+        console.log(friends.length);
+        var newFriend = req.body;
+
+        var friendsLength = friends.length;
+        console.log(friendsLength);
+
         var allDifferences = [];
 
-        for (i=0; i<friends.length; i++) {
-            var score1 = friends[i].score;
+        for (var i=0; i<friendsLength; i++) {
+            console.log("i is: " + i);
+            var currentFriend = friends[i];
+            console.log("Current looping friend: " + currentFriend);
+            var score1 = currentFriend.score;
             var score2 = newFriend.score;
             var differenceTotal = 0;
+            var score1Length = score1.length;
+            console.log("Score 1 Length: " + score1Length);
 
-            for (var i=0; i<score1.length; i++) {
+            for (var i=0; i<score1Length; i++) {
                 var difference = parseInt(score1[i]) - parseInt(score2[i]);
                 if (difference < 0) {
                     differenceTotal+= Math.abs(difference);
@@ -32,24 +44,10 @@ module.exports = function(app) {
         var matchedFriend = friends[friendID];
 
         console.log(matchedFriend);
+        
+        res.json(matchedFriend);
+        
 
-        cb(a);
-
-        return matchedFriend;
-    };
-
-    app.get("/api/friends", function(req, res) {
-        return res.json(friends);
-    });
-
-    app.post("/api/friends", function(req, res) {
-        var newFriend = req.body;
-
-        //using a callback to post results of friend matching
-        friendMatch(friends, newFriend, function(res) {
-            res.json(matchedFriend);
-        });
-
-        friends.push(req.body);
+        friends.push(newFriend);
     });
 };
