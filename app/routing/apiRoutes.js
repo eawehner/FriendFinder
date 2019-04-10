@@ -17,6 +17,7 @@ module.exports = function(app) {
         console.log(friendsLength);
 
         var allDifferences = [];
+        var friendID = 0;
 
         for (var i=0; i<friendsLength; i++) {
             console.log("i is: " + i);
@@ -30,24 +31,32 @@ module.exports = function(app) {
 
             for (var i=0; i<score1Length; i++) {
                 var difference = parseInt(score1[i]) - parseInt(score2[i]);
+
+                console.log(difference);
                 if (difference < 0) {
-                    differenceTotal+= Math.abs(difference);
+                    differenceTotal+=Math.abs(difference);
                 } else {
                     differenceTotal+=difference;
                 }
             };
 
             allDifferences.push(differenceTotal);
+
+            console.log("All Differences:" + allDifferences);
+
+            for (var i=0; i<allDifferences.length; i++) {
+                if (differenceTotal <= allDifferences[i]) {
+                    friendID=i;
+                    console.log(friendID);
+                }
+            }
         };
 
-        var friendID = Math.min(...allDifferences);
         var matchedFriend = friends[friendID];
-
         console.log(matchedFriend);
-        
-        res.json(matchedFriend);
-        
 
         friends.push(newFriend);
+
+        res.json(matchedFriend);
     });
 };
