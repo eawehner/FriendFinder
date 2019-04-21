@@ -144,13 +144,26 @@
             <option value="5">5 - "The Predator is from a race of master hunters that can't be beat!"</option>
         </select>
 
+        <hr>
+
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
     </div>
 
-    <div class="container" id="matchedFriend">
-        <h2>Your Result:</h2>
-        <h4 id="matchedName"></h4>
-        <img src="" id="matchedIMG"></img>
+    <div class="modal" id="matchedFriend">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Your New Friend!:</h2>
+                </div>
+                <div class="modal-body">
+                    <h4 id="matchedName"></h4>
+                    <img src="" id="matchedIMG"></img>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="footer">
@@ -183,6 +196,7 @@
             if (data) {
                 $("#matchedName").text(data.name);
                 $("#matchedIMG").attr("src", data.photo);
+                $("#matchedFriend").show();
             } else {
                 console.log("Oh no...No friends for you...");
             }
@@ -190,6 +204,10 @@
             $("#name").val("");
             $("#photo").val("");
         });
+    });
+
+    $("#close").on("click", function() {
+        $("#matchedFriend").hide();
     });
 </script>
 
